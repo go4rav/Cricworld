@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html LANG="en">
+<head>
+	<title> Cricworld </title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%  static 'CSS/index.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fahkwang">
+</head>
+<body>
+	
+	<div class="box">
+		<img  src="{% static 'images/ground.jpg' %}">
+		<a href="{%  url 'start:login' %}"><button class="btn1"> LOGIN </button></a>
+		<a href="{%  url 'start:signup' %}"><button class="btn2"> SIGNUP </button></a>
+		<div class="text"> Relive the Most Exciting Cricket Matches here!! </div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+	<title>Cricworld</title>
+	<meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT Sans">
+	<style>
+		.box
+		{
+			position:relative;
+			top: 50px;
+			left:520px;
+			font-size: 20px;
+			height: 630px;
+			width: 500px;
+			background-color: #fff;
+			box-shadow: 20px 0 20px 0 rgba(0, 0, 0, 0.2), 0 10px 10px 0 rgba(0, 0, 0, 0.24);
+		}
+
+		body
+		{
+			width:500px;
+			background-color: #007d80;
+		}
+		#head
+		{
+			position:absolute;
+			margin-left: 200px;
+			margin-top: 30px;
+			color: #007d80;
+		}
+
+
+		#footer 
+		{
+			position:absolute;
+			margin-top:20px;
+			margin-left:130px;
+			font-size:16px;
+			
+		}
+		#input
+		{
+			position:absolute;
+			margin-top:60px;
+		}
+
+		
+		.group
+		{
+			width:350px;
+			margin-left:80px;
+			margin-top:30px;
+
+		}
+		input
+		{
+			width: 100%;
+			background-color: #f2f2f2;
+			border:0;
+			padding: 10px;	
+			outline: 0;
+			box-sizing: border-box;
+		}
+
+		.btn1
+		{
+			background-color:#007d80;
+			color: #fff;
+			width:100%;
+			padding: 10px;
+			
+
+		}
+	</style>
+
+</head>
+<body>
+	<div class="box">
+		<form method="POST" action="">
+			{% csrf_token %}
+			<h3 id="head"> SIGNUP </h3>
+			<div id="input">
+				<div class="group">{{form.username}}</div>
+		
+				<div class="group">{{form.first_name}}</div>
+
+				<div class="group"> {{form.email}} </div>
+					
+				<div class="group"> {{form.password1}} </div>
+				
+				<div class="group"> {{form.password2}} </div>
+				
+				<div class="group"> <button type="submit" class="btn1"> SUBMIT </button> </div>
+				
+				<div id="footer">
+					<p> Already have an account?? &nbsp <a href="{% url 'start:login' %}" style="color: #007d80"> LOGIN </a> </p> 
+				</div>		
+			</div>	
+		</form>
+			  <div class="modal fade" id="#mymodal" role="dialog">
+			    <div class="modal-dialog">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        </div>
+			        <div class="modal-body">
+			          <p>{{form.errors}}</p>
+			        </div>
+			        <div class="modal-footer">
+          				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        			</div>
+      			  </div>
+      
+   				 </div>
+  			 </div>
+  			 <script>
+  			 	{% if form.errors %}
+				    $('#\\#mymodal').modal('show');
+				{%  endif %}
+				var inp=document.getElementById("head");
+				var input=document.getElementsByTagName("input");
+				input[1].placeholder='Username....';
+				input[2].placeholder='Name....';
+				input[3].placeholder='Email....';
+				input[4].placeholder='Password....';
+				input[5].placeholder='Confirm Password....';
+				
+  			 </script>
+		
+	</div>
+
+</body>
+
+
+</html>

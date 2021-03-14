@@ -1,0 +1,48 @@
+.box
+{
+	position: relative;
+	width: 1505px;
+	height: 710px;
+}
+
+img
+{
+	width:100%;
+	height: 100%;
+}
+.box .text
+{
+	position:absolute;
+	top: 48%;
+	left: 32%;
+	color:white;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: 'Fahkwang';
+
+}
+
+.box .btn1,  .btn2
+{
+	position: absolute;
+	top: 41% ;
+	font-size: 20px;
+	border-radius: 5px;
+	cursor:pointer;
+	background-color: #921125;
+	color: white;
+	
+}
+.box .btn1:hover, .btn2:hover {
+  background-color: black;
+}
+
+.box .btn1
+{
+	left:45%;
+	padding-right: 10px;
+}
+.box .btn2
+{
+	left:52%;
+}
